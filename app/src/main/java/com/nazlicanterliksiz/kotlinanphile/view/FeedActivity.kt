@@ -1,5 +1,6 @@
 package com.nazlicanterliksiz.kotlinanphile.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -45,6 +46,7 @@ class FeedActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun getData() {
         db.collection("Posts").addSnapshotListener { value, error ->
 
@@ -57,17 +59,15 @@ class FeedActivity : AppCompatActivity() {
                         val documents = value.documents
 
                         for (document in documents){
-                            val comment = document.get("comment") as String   //casting ne geliyorsa stringe çevir
-                            val userEmail = document.get("userEmail") as String
-                            val downloadUrl = document.get("downloadUrl") as String
+                            val comment = document.get("comment") as String?   //casting ne geliyorsa stringe çevir
+                            val userEmail = document.get("userEmail") as String?
+                            val downloadUrl = document.get("downloadUrl") as String?
 
                             println(comment)
                             val post = Post(userEmail,comment,downloadUrl)
                             postArrayList.add(post)
                         }
-
                         feedAdapter.notifyDataSetChanged()
-
                     }
                 }
             }
