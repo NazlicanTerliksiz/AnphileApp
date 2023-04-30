@@ -22,6 +22,7 @@ class FeedRecyclerAdapter (private val  postList : ArrayList<Post>): RecyclerVie
         holder.binding.recyclerEmailText.text=postList.get(position).email
         holder.binding.recyclerCommentText.text=postList.get(position).comment
         //Picasso.get().load(postList.get(position).downloadUrl).into(holder.binding.recyclerImageView)
+        //Nazlıcan Terliksiz
     }
 
     override fun getItemCount(): Int {
