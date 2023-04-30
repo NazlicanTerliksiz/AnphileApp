@@ -4,25 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D0F4F1"
     tools:context=".view.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="258dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698"
+        app:srcCompat="@drawable/anphile" />
 
     <Button
         android:id="@+id/signInClicked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonbackround"
+        android:fontFamily="sans-serif-black"
         android:onClick="signInClicked"
-        android:text="Sign In"
+        android:text="SIGN IN"
         app:layout_constraintStart_toStartOf="@+id/passwordText"
         app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
     <EditText
         android:id="@+id/passwordText"
         android:layout_width="261dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:drawableStart="@drawable/ic_baseline_lock"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="Password"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,21 +49,26 @@
         android:id="@+id/signUpClicked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonbackround"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="false"
         android:onClick="signUpClicked"
-        android:text="Sign Up"
+        android:text="SIGN UP"
         app:layout_constraintEnd_toEndOf="@+id/passwordText"
         app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
     <EditText
         android:id="@+id/emailText"
         android:layout_width="261dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="207dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="268dp"
+        android:drawableStart="@drawable/ic_baseline_email"
         android:ems="10"
-        android:hint="Enter Email"
+        android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
